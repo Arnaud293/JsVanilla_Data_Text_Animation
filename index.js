@@ -18,6 +18,9 @@ const createLetter = () => {
 const loop = () => {
 
     setTimeout(() => {
+        if(wordIndex >= array.length){
+            wordIndex = 0;
+        }
         if(letterIndex < array[wordIndex].length){
             createLetter();
             letterIndex++;
@@ -31,7 +34,7 @@ const loop = () => {
             
         }
 
-    }, 150)
+    }, 100)
 
 }
 loop();
