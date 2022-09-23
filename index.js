@@ -9,6 +9,10 @@ const createLetter = () => {
     target.appendChild(letter);
 
     letter.textContent = array[wordIndex][letterIndex];
+
+    setTimeout(() => {
+        letter.remove();
+    }, 2800)
 }
 
 const loop = () => {
@@ -18,6 +22,13 @@ const loop = () => {
             createLetter();
             letterIndex++;
             loop();
+        } else {
+            wordIndex++;
+            letterIndex = 0;
+            setTimeout(() => {
+                loop();
+            }, 2800)
+            
         }
 
     }, 150)
